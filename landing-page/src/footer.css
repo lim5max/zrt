@@ -34,8 +34,8 @@
 
 .clients-marquee-logo {
   @apply h-8 w-auto object-contain;
-  filter: grayscale(100%);
-  opacity: 0.5;
+  filter: grayscale(0%);
+  opacity: 0.85;
   transition: all 0.3s ease;
 }
 
