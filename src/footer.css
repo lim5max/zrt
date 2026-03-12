@@ -1,6 +1,6 @@
 /* --- CLIENTS SECTION --- */
 .clients-section {
-  @apply py-12 bg-[#f5f5f7];
+  @apply py-12 bg-[#FBFBFB];
 }
 
 .clients-marquee-wrapper {
@@ -34,8 +34,8 @@
 
 .clients-marquee-logo {
   @apply h-8 w-auto object-contain;
-  filter: grayscale(100%);
-  opacity: 0.5;
+  filter: grayscale(0%);
+  opacity: 0.85;
   transition: all 0.3s ease;
 }
 

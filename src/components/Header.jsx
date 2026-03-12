@@ -56,7 +56,7 @@ const Header = () => {
     >
       <div className="container flex items-center justify-between">
         <div className="flex items-center gap-10">
-          <img src="/logo.svg" alt="ЦРТ" className="h-8" />
+          <a href="#" onClick={(e) => { e.preventDefault(); window.location.hash = ''; }}><img src="/logo.svg" alt="ЦРТ" className="h-8" /></a>
 
           <NavigationMenu className="hidden lg:flex">
             <NavigationMenuList className="flex items-center gap-1">
@@ -183,7 +183,7 @@ const Header = () => {
           <button className="h-11 rounded-full bg-dark-blue text-white px-7 text-base font-normal tracking-normal flex items-center hover:bg-slate-800 transition-colors">
             Связаться
           </button>
-          <button className="h-11 rounded-full bg-black/5 text-dark-blue px-5 text-base font-normal tracking-normal flex items-center gap-2.5 border border-black/5 hover:bg-black/10 transition-colors">
+          <button className="h-11 rounded-full bg-[#FBFBFB] text-dark-blue px-5 text-base font-normal tracking-normal flex items-center gap-2.5 border border-black/5 hover:bg-black/10 transition-colors">
             Меню <Menu size={20} strokeWidth={2} />
           </button>
         </div>

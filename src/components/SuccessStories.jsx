@@ -43,7 +43,7 @@ const StatCard = ({ stat, large = false, delay = 0 }) => (
     viewport={{ once: true }}
     transition={{ duration: 0.5, delay }}
     whileHover={{ y: -4, boxShadow: '0 12px 32px rgba(0,0,0,0.08)' }}
-    className="bg-[#f2f3f5] rounded-2xl flex flex-col p-7 cursor-pointer"
+    className="bg-[#FBFBFB] rounded-2xl flex flex-col p-7 cursor-pointer"
   >
     <div className="flex items-center gap-3 mb-1">
       <div className="w-8 h-8 flex-shrink-0 flex items-center justify-center">
