@@ -74,10 +74,7 @@ const ChatBubbles = () => (
   <div className="space-y-2.5">
     {/* User message 1 — right */}
     <div className="flex justify-end">
-      <div className="rounded-2xl rounded-tr-sm bg-turquoise/15 px-4 py-2.5" style={{ maxWidth: '70%' }}>
-        <div className="h-2 w-28 rounded-full bg-dark-blue/20" />
-        <div className="mt-1.5 h-2 w-16 rounded-full bg-dark-blue/12" />
-      </div>
+      <div className="rounded-2xl rounded-tr-sm bg-turquoise/15 w-40 h-8" />
     </div>
     {/* Bot message — left */}
     <div className="flex items-start gap-2">
@@ -87,17 +84,11 @@ const ChatBubbles = () => (
           <path d="M2.5 12.5 Q2.5 9, 7 9 Q11.5 9, 11.5 12.5" fill="#009bab" fillOpacity="0.3"/>
         </svg>
       </div>
-      <div className="rounded-2xl rounded-tl-sm bg-dark-blue/[0.05] px-4 py-2.5" style={{ maxWidth: '75%' }}>
-        <div className="h-2 w-36 rounded-full bg-dark-blue/18" />
-        <div className="mt-1.5 h-2 w-24 rounded-full bg-dark-blue/12" />
-        <div className="mt-1.5 h-2 w-28 rounded-full bg-dark-blue/12" />
-      </div>
+      <div className="rounded-2xl rounded-tl-sm bg-dark-blue/[0.05] w-48 h-12" />
     </div>
     {/* User message 2 — right */}
     <div className="flex justify-end">
-      <div className="rounded-2xl rounded-tr-sm bg-turquoise/15 px-4 py-2.5" style={{ maxWidth: '65%' }}>
-        <div className="h-2 w-20 rounded-full bg-dark-blue/20" />
-      </div>
+      <div className="rounded-2xl rounded-tr-sm bg-turquoise/15 w-36 h-8" />
     </div>
     {/* Bot typing — left */}
     <div className="flex items-start gap-2">
@@ -196,6 +187,7 @@ const RecordingVisual = () => (
     {[
       { w: 55, time: '06:12', active: false },
       { w: 80, time: '07:45', active: false },
+      { w: 65, time: '08:23', active: false },
     ].map(({ w, time }, i) => (
       <div key={`extra-${i}`} className="flex items-center gap-3">
         <div className="w-2.5 h-2.5 rounded-full flex-shrink-0 bg-turquoise/50" />
@@ -460,7 +452,7 @@ const products = [
   },
   // Row 2, col 3
   {
-    title: 'Аудио- и видеопротоколирование',
+    title: 'Аудио и видеопротоколирование',
     desc: 'Запись судебных заседаний и совещаний',
     items: ['Нестор.Brief', 'Нестор.Правосудие'],
     icon: Video,
@@ -560,7 +552,7 @@ const BentoCard = ({ product, index, onProductClick }) => {
 
         {/* Visual illustration */}
         {Visual && (
-          <div className={isFeatured || product.fullVisual ? '' : 'self-start max-w-[70%]'}>
+          <div className={`${isFeatured || product.fullVisual ? 'mt-6' : 'self-start max-w-[70%]'}`}>
             <Visual />
           </div>
         )}
@@ -571,9 +563,27 @@ const BentoCard = ({ product, index, onProductClick }) => {
         <ArrowUpRight className="w-4 h-4 text-dark-blue" />
       </div>
 
-      {/* Decorative bg icon */}
+      {/* Decorative bg icon / illustration */}
       <div className="absolute -right-4 -bottom-4 opacity-[0.07] transition-opacity duration-500 group-hover:opacity-[0.12]">
-        <Icon className="w-28 h-28" strokeWidth={0.5} />
+        {product.tall ? (
+          <svg width="160" height="160" viewBox="0 0 160 160" fill="none">
+            <rect x="30" y="10" width="100" height="140" rx="12" stroke="#00263b" strokeWidth="2" />
+            <rect x="42" y="24" width="76" height="20" rx="4" stroke="#00263b" strokeWidth="1.5" />
+            <circle cx="54" cy="34" r="3" fill="#009bab" />
+            <rect x="62" y="31" width="44" height="6" rx="3" fill="#00263b" fillOpacity="0.3" />
+            <rect x="42" y="52" width="76" height="20" rx="4" stroke="#00263b" strokeWidth="1.5" />
+            <circle cx="54" cy="62" r="3" fill="#009bab" />
+            <rect x="62" y="59" width="44" height="6" rx="3" fill="#00263b" fillOpacity="0.3" />
+            <rect x="42" y="80" width="76" height="20" rx="4" stroke="#00263b" strokeWidth="1.5" />
+            <circle cx="54" cy="90" r="3" fill="#009bab" />
+            <rect x="62" y="87" width="44" height="6" rx="3" fill="#00263b" fillOpacity="0.3" />
+            {[112, 118, 124, 130].map((y) => (
+              <line key={y} x1="50" y1={y} x2="110" y2={y} stroke="#00263b" strokeWidth="1" strokeOpacity="0.3" />
+            ))}
+          </svg>
+        ) : (
+          <Icon className="w-28 h-28" strokeWidth={0.5} />
+        )}
       </div>
     </motion.div>
   );

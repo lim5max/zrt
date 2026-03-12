@@ -4,15 +4,13 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a React landing page for ZRT (Завод радиотехнологий) built with Vite. The project is located in the `landing-page/` subdirectory.
+This is a React landing page for ZRT (Завод радиотехнологий) built with Vite. The project lives in the repository root.
 
 ## Commands
 
-All commands should be run from the `landing-page/` directory:
+All commands should be run from the repo root:
 
 ```bash
-cd landing-page
-
 npm run dev      # Start development server with HMR
 npm run build    # Production build
 npm run lint     # Run ESLint
