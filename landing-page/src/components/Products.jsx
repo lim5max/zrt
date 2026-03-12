@@ -438,7 +438,7 @@ const BentoCard = ({ product, index }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: (index % 4) * 0.08 }}
-      className={`group relative overflow-hidden rounded-2xl bg-[#f2f3f5] cursor-pointer transition-all duration-500 hover:-translate-y-1 hover:shadow-xl hover:shadow-dark-blue/5 ${product.span} ${isFeatured ? 'p-8 md:p-10' : 'p-6 md:p-7'}`}
+      className={`group relative overflow-hidden rounded-2xl bg-[#FBFBFB] cursor-pointer transition-all duration-500 hover:-translate-y-1 hover:shadow-xl hover:shadow-dark-blue/5 ${product.span} ${isFeatured ? 'p-8 md:p-10' : 'p-6 md:p-7'}`}
     >
       {/* Content layer */}
       <div className="relative z-10 flex flex-col h-full">

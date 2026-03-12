@@ -1,6 +1,6 @@
 /* --- CLIENTS SECTION --- */
 .clients-section {
-  @apply py-12 bg-[#f5f5f7];
+  @apply py-12 bg-[#FBFBFB];
 }
 
 .clients-marquee-wrapper {
