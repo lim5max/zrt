@@ -71,33 +71,46 @@ const WaveformVisual = () => (
 );
 
 const ChatBubbles = () => (
-  <div className="space-y-3">
+  <div className="space-y-2.5">
+    {/* User message 1 — right */}
     <div className="flex justify-end">
-      <div className="bg-turquoise/25 border border-turquoise/15 rounded-2xl rounded-br-sm px-4 py-3 max-w-[200px]">
-        <div className="h-2.5 w-28 bg-dark-blue/25 rounded-full" />
-        <div className="h-2.5 w-18 bg-dark-blue/18 rounded-full mt-2" />
+      <div className="rounded-2xl rounded-tr-sm bg-turquoise/15 px-4 py-2.5" style={{ maxWidth: '70%' }}>
+        <div className="h-2 w-28 rounded-full bg-dark-blue/20" />
+        <div className="mt-1.5 h-2 w-16 rounded-full bg-dark-blue/12" />
       </div>
     </div>
-    <div className="flex justify-start">
-      <div className="bg-dark-blue/12 border border-dark-blue/8 rounded-2xl rounded-bl-sm px-4 py-3 max-w-[220px]">
-        <div className="h-2.5 w-36 bg-dark-blue/25 rounded-full" />
-        <div className="h-2.5 w-24 bg-dark-blue/18 rounded-full mt-2" />
-        <div className="h-2.5 w-30 bg-dark-blue/18 rounded-full mt-2" />
+    {/* Bot message — left */}
+    <div className="flex items-start gap-2">
+      <div className="flex-shrink-0 w-7 h-7 rounded-full bg-turquoise/15 flex items-center justify-center">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <circle cx="7" cy="5" r="2.5" fill="#009bab" fillOpacity="0.45"/>
+          <path d="M2.5 12.5 Q2.5 9, 7 9 Q11.5 9, 11.5 12.5" fill="#009bab" fillOpacity="0.3"/>
+        </svg>
+      </div>
+      <div className="rounded-2xl rounded-tl-sm bg-dark-blue/[0.05] px-4 py-2.5" style={{ maxWidth: '75%' }}>
+        <div className="h-2 w-36 rounded-full bg-dark-blue/18" />
+        <div className="mt-1.5 h-2 w-24 rounded-full bg-dark-blue/12" />
+        <div className="mt-1.5 h-2 w-28 rounded-full bg-dark-blue/12" />
       </div>
     </div>
+    {/* User message 2 — right */}
     <div className="flex justify-end">
-      <div className="bg-turquoise/25 border border-turquoise/15 rounded-2xl rounded-br-sm px-4 py-2.5 max-w-[170px]">
-        <div className="h-2.5 w-22 bg-dark-blue/25 rounded-full" />
+      <div className="rounded-2xl rounded-tr-sm bg-turquoise/15 px-4 py-2.5" style={{ maxWidth: '65%' }}>
+        <div className="h-2 w-20 rounded-full bg-dark-blue/20" />
       </div>
     </div>
-    <div className="flex justify-start items-end gap-2">
-      <div className="bg-dark-blue/12 border border-dark-blue/8 rounded-2xl rounded-bl-sm px-4 py-2.5 max-w-[160px]">
-        <div className="h-2.5 w-20 bg-dark-blue/20 rounded-full" />
+    {/* Bot typing — left */}
+    <div className="flex items-start gap-2">
+      <div className="flex-shrink-0 w-7 h-7 rounded-full bg-turquoise/15 flex items-center justify-center">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <circle cx="7" cy="5" r="2.5" fill="#009bab" fillOpacity="0.45"/>
+          <path d="M2.5 12.5 Q2.5 9, 7 9 Q11.5 9, 11.5 12.5" fill="#009bab" fillOpacity="0.3"/>
+        </svg>
       </div>
-      <div className="flex gap-0.5 mb-2">
-        <div className="w-1.5 h-1.5 rounded-full bg-dark-blue/30 animate-bounce" style={{ animationDelay: '0ms' }} />
-        <div className="w-1.5 h-1.5 rounded-full bg-dark-blue/30 animate-bounce" style={{ animationDelay: '150ms' }} />
-        <div className="w-1.5 h-1.5 rounded-full bg-dark-blue/30 animate-bounce" style={{ animationDelay: '300ms' }} />
+      <div className="rounded-2xl rounded-tl-sm bg-dark-blue/[0.05] px-4 py-3 flex items-center gap-1.5">
+        <span className="block w-1.5 h-1.5 rounded-full bg-dark-blue/30 animate-bounce" style={{ animationDelay: '0ms', animationDuration: '0.8s' }} />
+        <span className="block w-1.5 h-1.5 rounded-full bg-dark-blue/30 animate-bounce" style={{ animationDelay: '150ms', animationDuration: '0.8s' }} />
+        <span className="block w-1.5 h-1.5 rounded-full bg-dark-blue/30 animate-bounce" style={{ animationDelay: '300ms', animationDuration: '0.8s' }} />
       </div>
     </div>
   </div>
@@ -116,14 +129,12 @@ const FaceGrid = () => (
       <path d="M52 105 C52 82 68 72 88 72 C108 72 124 82 124 105" fill="#00263b" fillOpacity="0.10" />
       {/* Scanning horizontal line */}
       <line x1="42" y1="55" x2="134" y2="55" stroke="#009bab" strokeWidth="1.5" strokeOpacity="0.35" strokeDasharray="4 3" />
-      {/* Biometric mesh over silhouette */}
-      {[[74,35],[102,35],[88,28],[88,50],[76,46],[100,46],[82,56],[94,56],[70,65],[106,65],[88,68]].map(([x,y], i) => (
+      {/* Biometric mesh over face */}
+      {[[74,35],[102,35],[88,28],[88,48],[78,44],[98,44]].map(([x,y], i) => (
         <circle key={i} cx={x} cy={y} r="2.5" fill="#009bab" fillOpacity={0.45} />
       ))}
       {/* Mesh connections */}
-      <path d="M74 35 L88 28 L102 35 L100 46 L88 50 L76 46 Z" stroke="#009bab" strokeWidth="1" strokeOpacity="0.25" fill="#009bab" fillOpacity="0.04" />
-      <path d="M76 46 L82 56 L88 50 L94 56 L100 46" stroke="#009bab" strokeWidth="1" strokeOpacity="0.2" fill="none" />
-      <path d="M82 56 L70 65 M94 56 L106 65 M88 50 L88 68" stroke="#009bab" strokeWidth="0.8" strokeOpacity="0.18" />
+      <path d="M74 35 L88 28 L102 35 L98 44 L88 48 L78 44 Z" stroke="#009bab" strokeWidth="1" strokeOpacity="0.25" fill="#009bab" fillOpacity="0.04" />
       {/* Shield + check */}
       <g transform="translate(145, 10)">
         <path d="M12 2 L2 7 L2 14 C2 20 6 25 12 27 C18 25 22 20 22 14 L22 7 Z" stroke="#009bab" strokeWidth="1.5" strokeOpacity="0.55" fill="#009bab" fillOpacity="0.08" />
@@ -134,6 +145,14 @@ const FaceGrid = () => (
     </svg>
   </div>
 );
+
+const handwritingPaths = [
+  'M0 5 C4 2, 8 8, 14 5 S22 1, 28 5 S36 9, 42 5 S50 1, 56 5 S64 8, 70 5',
+  'M0 5 C5 3, 10 7, 16 5 S24 2, 30 6 S38 8, 46 4 S52 2, 60 5',
+  'M0 5 C6 1, 12 8, 18 5 S26 2, 34 5 S40 8, 48 4 S56 2, 62 6 S70 8, 76 5',
+  'M0 5 C3 3, 8 7, 14 5 S20 3, 28 5 S34 7, 42 5 S48 3, 56 5',
+  'M0 5 C5 2, 12 8, 18 5 S26 1, 34 5 S42 9, 50 5 S58 1, 66 5',
+];
 
 const RecordingVisual = () => (
   <div className="space-y-3">
@@ -158,6 +177,18 @@ const RecordingVisual = () => (
         <span className="text-[11px] font-mono text-dark-blue/50 whitespace-nowrap font-medium">
           {time}
         </span>
+        {/* Handwriting-style scribble line */}
+        <svg width="80" height="10" viewBox="0 0 80 10" fill="none" className="flex-shrink-0">
+          <path
+            d={handwritingPaths[i]}
+            stroke="#00263b"
+            strokeWidth="1.5"
+            strokeOpacity={active ? 0.3 : 0.15}
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            fill="none"
+          />
+        </svg>
       </div>
     ))}
   </div>
@@ -176,12 +207,6 @@ const SpeakerVisual = () => (
       <path d="M96 30 C108 40, 108 70, 96 80" stroke="#009bab" strokeWidth="2" strokeOpacity="0.45" strokeLinecap="round" fill="none" />
       <path d="M104 22 C120 36, 120 74, 104 88" stroke="#009bab" strokeWidth="1.5" strokeOpacity="0.3" strokeLinecap="round" fill="none" />
       <path d="M112 16 C132 32, 132 78, 112 94" stroke="#009bab" strokeWidth="1" strokeOpacity="0.18" strokeLinecap="round" fill="none" />
-      {/* Signal dots spreading outward */}
-      <circle cx="125" cy="35" r="2.5" fill="#009bab" fillOpacity="0.35" />
-      <circle cx="130" cy="55" r="2.5" fill="#009bab" fillOpacity="0.45" />
-      <circle cx="125" cy="75" r="2.5" fill="#009bab" fillOpacity="0.35" />
-      <circle cx="140" cy="45" r="2" fill="#009bab" fillOpacity="0.2" />
-      <circle cx="140" cy="65" r="2" fill="#009bab" fillOpacity="0.2" />
       {/* Handle */}
       <path d="M35 68 L35 85 Q35 90 40 90 L45 90 Q50 90 50 85 L50 75" stroke="#00263b" strokeWidth="1.5" strokeOpacity="0.3" fill="none" />
     </svg>
@@ -194,10 +219,6 @@ const VideoVisual = () => (
       <div className="w-1/2 h-16 rounded-lg bg-dark-blue/12 border border-dark-blue/8 flex items-center justify-center relative overflow-hidden">
         <div className="w-8 h-8 rounded-full border-2 border-dark-blue/25 flex items-center justify-center bg-dark-blue/5">
           <div className="w-0 h-0 border-l-[8px] border-l-dark-blue/40 border-y-[5px] border-y-transparent ml-1" />
-        </div>
-        <div className="absolute top-1.5 right-1.5 flex items-center gap-1">
-          <div className="w-1.5 h-1.5 rounded-full bg-turquoise/70" />
-          <span className="text-[7px] font-mono text-dark-blue/35">REC</span>
         </div>
       </div>
       <div className="w-1/2 h-16 rounded-lg bg-dark-blue/8 border border-dark-blue/6 relative overflow-hidden">
@@ -236,16 +257,14 @@ const TextDocVisual = () => (
   <div className="flex items-center justify-center">
     <svg width="200" height="100" viewBox="0 0 200 100" fill="none">
       {/* Microphone on left */}
-      <rect x="10" y="18" width="20" height="34" rx="10" stroke="#009bab" strokeWidth="2" strokeOpacity="0.6" fill="#009bab" fillOpacity="0.08" />
-      <path d="M4 52 C4 66 12 72 20 72 C28 72 36 66 36 52" stroke="#009bab" strokeWidth="2" strokeOpacity="0.45" fill="none" strokeLinecap="round" />
-      <line x1="20" y1="72" x2="20" y2="82" stroke="#009bab" strokeWidth="2" strokeOpacity="0.45" />
-      <line x1="12" y1="82" x2="28" y2="82" stroke="#009bab" strokeWidth="2" strokeOpacity="0.45" strokeLinecap="round" />
-      {/* Sound waves */}
-      <path d="M38 28 C43 33, 43 43, 38 48" stroke="#009bab" strokeWidth="1.5" strokeOpacity="0.4" fill="none" strokeLinecap="round" />
-      <path d="M44 22 C52 30, 52 46, 44 54" stroke="#009bab" strokeWidth="1.5" strokeOpacity="0.25" fill="none" strokeLinecap="round" />
-      {/* Arrow */}
-      <path d="M54 40 L66 40" stroke="#00263b" strokeWidth="2" strokeOpacity="0.3" strokeLinecap="round" />
-      <path d="M62 36 L68 40 L62 44" stroke="#00263b" strokeWidth="2" strokeOpacity="0.3" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+      <rect x="10" y="22" width="20" height="34" rx="10" stroke="#009bab" strokeWidth="2" strokeOpacity="0.6" fill="#009bab" fillOpacity="0.08" />
+      {/* Mount clip - wide arc wrapping lower capsule */}
+      <path d="M2 46 C2 64 10 70 20 70 C30 70 38 64 38 46" stroke="#009bab" strokeWidth="2" strokeOpacity="0.45" fill="none" strokeLinecap="round" />
+      <line x1="20" y1="70" x2="20" y2="78" stroke="#009bab" strokeWidth="2" strokeOpacity="0.45" />
+      <line x1="12" y1="78" x2="28" y2="78" stroke="#009bab" strokeWidth="2" strokeOpacity="0.45" strokeLinecap="round" />
+      {/* Arrow - vertically centered with mic */}
+      <path d="M54 48 L66 48" stroke="#00263b" strokeWidth="2" strokeOpacity="0.3" strokeLinecap="round" />
+      <path d="M62 44 L68 48 L62 52" stroke="#00263b" strokeWidth="2" strokeOpacity="0.3" strokeLinecap="round" strokeLinejoin="round" fill="none" />
       {/* Document */}
       <rect x="74" y="8" width="118" height="84" rx="5" stroke="#00263b" strokeWidth="1.5" strokeOpacity="0.2" fill="white" fillOpacity="0.4" />
       {/* Doc header */}
@@ -272,19 +291,20 @@ const MicVisual = () => (
       <rect x="15" y="10" width="22" height="45" rx="11" stroke="#00263b" strokeWidth="1.5" strokeOpacity="0.4" fill="#00263b" fillOpacity="0.06" />
       <line x1="15" y1="25" x2="37" y2="25" stroke="#00263b" strokeWidth="0.7" strokeOpacity="0.2" />
       <line x1="15" y1="35" x2="37" y2="35" stroke="#00263b" strokeWidth="0.7" strokeOpacity="0.2" />
-      <path d="M8 55 C8 68 16 75 26 75 C36 75 44 68 44 55" stroke="#00263b" strokeWidth="1.5" strokeOpacity="0.3" fill="none" />
-      <line x1="26" y1="75" x2="26" y2="85" stroke="#00263b" strokeWidth="1.5" strokeOpacity="0.3" />
-      <line x1="16" y1="85" x2="36" y2="85" stroke="#00263b" strokeWidth="2" strokeOpacity="0.3" strokeLinecap="round" />
+      {/* Mount clip - wraps around lower part of capsule */}
+      <path d="M8 46 C8 62 16 68 26 68 C36 68 44 62 44 46" stroke="#00263b" strokeWidth="1.5" strokeOpacity="0.3" fill="none" />
+      <line x1="26" y1="68" x2="26" y2="82" stroke="#00263b" strokeWidth="1.5" strokeOpacity="0.3" />
+      <line x1="16" y1="82" x2="36" y2="82" stroke="#00263b" strokeWidth="2" strokeOpacity="0.3" strokeLinecap="round" />
       <text x="26" y="7" textAnchor="middle" fontSize="7" fill="#00263b" fillOpacity="0.35" fontFamily="monospace">STC</text>
       {/* Microphone 2 - dynamic */}
-      <circle cx="90" cy="25" r="18" stroke="#009bab" strokeWidth="1.5" strokeOpacity="0.5" fill="#009bab" fillOpacity="0.06" />
-      <circle cx="90" cy="25" r="10" stroke="#009bab" strokeWidth="1" strokeOpacity="0.3" />
-      <circle cx="90" cy="25" r="3" fill="#009bab" fillOpacity="0.4" />
-      <rect x="84" y="43" width="12" height="25" rx="2" stroke="#00263b" strokeWidth="1.5" strokeOpacity="0.3" fill="#00263b" fillOpacity="0.05" />
-      <line x1="84" y1="52" x2="96" y2="52" stroke="#00263b" strokeWidth="0.7" strokeOpacity="0.2" />
-      <line x1="84" y1="58" x2="96" y2="58" stroke="#00263b" strokeWidth="0.7" strokeOpacity="0.2" />
-      <line x1="90" y1="68" x2="90" y2="78" stroke="#00263b" strokeWidth="1.5" strokeOpacity="0.3" />
-      <ellipse cx="90" cy="82" rx="14" ry="4" stroke="#00263b" strokeWidth="1" strokeOpacity="0.2" fill="none" />
+      <circle cx="90" cy="30" r="18" stroke="#009bab" strokeWidth="1.5" strokeOpacity="0.5" fill="#009bab" fillOpacity="0.06" />
+      <circle cx="90" cy="30" r="10" stroke="#009bab" strokeWidth="1" strokeOpacity="0.3" />
+      <circle cx="90" cy="30" r="3" fill="#009bab" fillOpacity="0.4" />
+      <rect x="84" y="46" width="12" height="20" rx="2" stroke="#00263b" strokeWidth="1.5" strokeOpacity="0.3" fill="#00263b" fillOpacity="0.05" />
+      <line x1="84" y1="53" x2="96" y2="53" stroke="#00263b" strokeWidth="0.7" strokeOpacity="0.2" />
+      <line x1="84" y1="59" x2="96" y2="59" stroke="#00263b" strokeWidth="0.7" strokeOpacity="0.2" />
+      <line x1="90" y1="66" x2="90" y2="78" stroke="#00263b" strokeWidth="1.5" strokeOpacity="0.3" />
+      <ellipse cx="90" cy="78" rx="14" ry="4" stroke="#00263b" strokeWidth="1" strokeOpacity="0.2" fill="none" />
       {/* Frequency spectrum bars on right */}
       {[
         { x: 130, h: 30 }, { x: 140, h: 50 }, { x: 150, h: 65 }, { x: 160, h: 55 },

@@ -148,9 +148,8 @@ const Footer = () => {
                   type="submit"
                   className="group relative overflow-hidden bg-turquoise text-white text-lg font-bold py-[22px] px-12 rounded-full transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,155,171,0.3)]"
                 >
-                  <span className="relative z-10 flex items-center gap-3">
+                  <span className="relative z-10">
                     Отправить
-                    <Send className="w-5 h-5 stroke-[2.5] transition-transform group-hover:translate-x-1" />
                   </span>
                   <div className="absolute inset-0 bg-white/0 group-hover:bg-white/10 transition-colors duration-300" />
                 </button>
