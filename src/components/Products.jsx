@@ -415,7 +415,7 @@ const DictaphoneVisual = () => (
 const products = [
   // Tall left (rows 1-2, col 1)
   {
-    title: 'ИИ-решения для обслуживания клиентов',
+    title: 'ИИ-решения для обслуживания ваших клиентов',
     desc: 'Виртуальные ассистенты, речевая аналитика и навигаторы для контактных центров',
     items: ['VoiceNavigator', 'ChatNavigator', 'SpeechXplore', 'Smart Logger', 'AgentNavigator'],
     icon: BrainCircuit,
