@@ -1,0 +1,194 @@
+/* --- HERO (old) --- */
+.hero-title {
+  @apply font-heading text-4xl md:text-5xl lg:text-7xl font-normal leading-none mb-8;
+  background: linear-gradient(100.07deg, #FFFFFF 30%, rgba(255, 255, 255, 0.7) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+  @apply text-lg md:text-xl leading-relaxed mb-12 opacity-80 max-w-xl;
+}
+
+.hero-cta {
+  @apply inline-flex items-center gap-3 bg-turquoise text-white text-lg font-bold py-4 px-8 rounded-lg transition-all duration-300 hover:bg-cyan-700 hover:translate-x-1;
+}
+
+/* --- STATS --- */
+.stats-section {
+  @apply pt-10 pb-16 bg-white;
+}
+
+.stats-grid {
+  @apply flex flex-col md:flex-row items-center justify-center gap-10 md:gap-14;
+}
+
+.stat-card {
+  @apply flex flex-col items-center text-center text-text-main;
+}
+
+.stat-value {
+  font-family: 'Google Sans', sans-serif;
+  @apply text-4xl md:text-5xl font-semibold mb-2 text-turquoise leading-none tracking-tight;
+}
+
+.stat-label {
+  @apply text-xs opacity-50 leading-normal tracking-widest uppercase;
+}
+
+/* --- PRODUCTS --- */
+.products-section {
+  @apply py-30 bg-white;
+}
+
+.section-title {
+  @apply font-heading text-2xl md:text-3xl text-dark-blue mb-6 tracking-tight;
+  font-weight: 600;
+}
+
+/* Products bento grid styles are now inline via Tailwind in Products.jsx */
+
+/* --- ABOUT --- */
+.about-section {
+  @apply py-24 md:py-32 bg-white overflow-hidden;
+}
+
+.about-layout {
+  @apply flex flex-col lg:flex-row items-start gap-12 lg:gap-16;
+}
+
+.about-content {
+  @apply flex-shrink-0 flex flex-col gap-4 pt-4;
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .about-content {
+    width: 40%;
+  }
+}
+
+.about-highlight {
+  @apply font-heading text-xl md:text-2xl font-medium leading-snug text-text-main;
+}
+
+.about-text {
+  @apply text-base leading-relaxed text-text-main/70;
+}
+
+.about-btn {
+  @apply inline-flex items-center justify-center mt-4
+         px-7 py-4 rounded-full
+         bg-dark-blue text-white text-base font-normal
+         transition-all duration-300
+         hover:opacity-90 w-fit;
+}
+
+.about-collage {
+  @apply flex-1 relative;
+  min-height: 480px;
+}
+
+.about-img {
+  @apply absolute rounded-2xl overflow-hidden shadow-lg;
+}
+
+.about-img img {
+  @apply w-full h-full object-cover;
+}
+
+/* large — top-left, slight tilt */
+.about-img-1 {
+  width: 52%;
+  aspect-ratio: 4 / 3;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+/* tall — top-right, overlaps img-1 */
+.about-img-2 {
+  width: 52%;
+  aspect-ratio: 3 / 4;
+  top: -20px;
+  right: 0;
+  z-index: 3;
+}
+
+/* wide — bottom-left, overlaps upward */
+.about-img-3 {
+  width: 50%;
+  aspect-ratio: 16 / 10;
+  bottom: 0;
+  left: 5%;
+  z-index: 4;
+}
+
+/* small accent — bottom-right, overlaps img-2 */
+.about-img-4 {
+  width: 40%;
+  aspect-ratio: 4 / 3;
+  bottom: 20px;
+  right: 2%;
+  z-index: 5;
+}
+
+/* zoom into CRT logo image so full name is visible */
+.about-img-2 img {
+  object-position: 55% 40%;
+  transform: scale(1);
+}
+
+/* --- COMMON GLASS CARD --- */
+.glass-card {
+  @apply bg-white border-2 border-dark-blue/10 rounded-4xl p-10 transition-all duration-300;
+}
+
+.glass-card:hover {
+  @apply -translate-y-1 border-turquoise/30 shadow-lg;
+}
+
+/* --- NEWS --- */
+.news-section {
+  @apply py-24 bg-white;
+}
+
+.news-header {
+  @apply flex items-center justify-between mb-10;
+}
+
+.news-view-all {
+  @apply inline-flex items-center gap-2 text-sm font-medium text-turquoise
+         hover:opacity-70 transition-opacity;
+}
+
+.news-grid {
+  @apply grid grid-cols-1 md:grid-cols-3 gap-8;
+}
+
+.news-card {
+  @apply flex flex-col no-underline;
+}
+
+.news-card-image {
+  @apply rounded-2xl overflow-hidden mb-4 bg-gray-200;
+  aspect-ratio: 3 / 2;
+}
+
+.news-card-image img {
+  @apply w-full h-full object-cover transition-transform duration-500;
+}
+
+.news-card:hover .news-card-image img {
+  transform: scale(1.04);
+}
+
+.news-date {
+  font-family: 'Google Sans', sans-serif;
+  @apply text-sm text-text-main/40 mb-2;
+}
+
+.news-title {
+  @apply font-heading text-base md:text-lg font-medium leading-snug text-text-main;
+}
