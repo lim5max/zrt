@@ -56,7 +56,7 @@ const Header = () => {
     >
       <div className="container flex items-center justify-between">
         <div className="flex items-center gap-10">
-          <img src="/logo.svg" alt="ЦРТ" className="h-8" />
+          <a href="#" onClick={(e) => { e.preventDefault(); window.location.hash = ''; }}><img src="/logo.svg" alt="ЦРТ" className="h-8" /></a>
 
           <NavigationMenu className="hidden lg:flex">
             <NavigationMenuList className="flex items-center gap-1">
